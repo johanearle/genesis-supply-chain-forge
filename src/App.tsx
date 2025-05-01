@@ -10,6 +10,7 @@ import Inventory from "./pages/Inventory";
 import Orders from "./pages/Orders";
 import Suppliers from "./pages/Suppliers";
 import Analytics from "./pages/Analytics";
+import AdvancedAnalytics from "./pages/AdvancedAnalytics";
 import Settings from "./pages/Settings";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/orders" element={<Orders />} />
             <Route path="/suppliers" element={<Suppliers />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
             <Route path="/settings" element={<Settings />} />
           </Route>
           <Route path="*" element={<NotFound />} />

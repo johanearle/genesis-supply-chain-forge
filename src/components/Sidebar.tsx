@@ -5,7 +5,8 @@ import {
   Package2, 
   ClipboardList, 
   Users, 
-  BarChart3, 
+  BarChart3,
+  Zap,
   Settings,
   X 
 } from "lucide-react";
@@ -23,6 +24,7 @@ const navItems = [
   { name: "Orders", path: "/orders", icon: ClipboardList },
   { name: "Suppliers", path: "/suppliers", icon: Users },
   { name: "Analytics", path: "/analytics", icon: BarChart3 },
+  { name: "Advanced Analytics", path: "/advanced-analytics", icon: Zap },
   { name: "Settings", path: "/settings", icon: Settings },
 ];
 
@@ -85,7 +87,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <div className="bg-scm-accent/20 rounded-md p-3">
             <p className="text-sm font-medium">Supply Chain MVP</p>
-            <p className="text-xs text-white/70 mt-1">Version 1.0.0</p>
+            <p className="text-xs text-white/70 mt-1">Next-Gen Enterprise System</p>
           </div>
         </div>
       </aside>
