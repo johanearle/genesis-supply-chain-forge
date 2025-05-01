@@ -5,7 +5,24 @@ import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-const nodes = [
+type NodeStatus = "active" | "warning" | "error" | "inactive";
+
+interface Node {
+  id: string;
+  name: string;
+  type: string;
+  x: number;
+  y: number;
+  status: NodeStatus;
+}
+
+interface Connection {
+  from: string;
+  to: string;
+  active: boolean;
+}
+
+const nodes: Node[] = [
   { id: "supplier1", name: "Supplier A", type: "supplier", x: 50, y: 80, status: "active" },
   { id: "supplier2", name: "Supplier B", type: "supplier", x: 50, y: 160, status: "active" },
   { id: "supplier3", name: "Supplier C", type: "supplier", x: 50, y: 240, status: "warning" },
@@ -28,23 +45,6 @@ const connections = [
   { from: "distribution", to: "retail2", active: false },
   { from: "distribution", to: "retail3", active: true },
 ];
-
-type NodeStatus = "active" | "warning" | "error" | "inactive";
-
-interface Node {
-  id: string;
-  name: string;
-  type: string;
-  x: number;
-  y: number;
-  status: NodeStatus;
-}
-
-interface Connection {
-  from: string;
-  to: string;
-  active: boolean;
-}
 
 const getNodeColor = (type: string, status: NodeStatus) => {
   const baseColors = {
