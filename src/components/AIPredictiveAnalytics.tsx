@@ -21,6 +21,7 @@ import {
   Legend
 } from "recharts";
 import { Zap, Activity, TrendingUp, FileBarChart } from "lucide-react";
+import Badge from "@/components/Badge";
 
 const forecastData = [
   { month: "Jan", actual: 120, predicted: 127, lower: 115, upper: 139 },
