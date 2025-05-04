@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Toaster } from "sonner";
+import { toast } from "sonner";
 import MetricsOverview from "@/components/analytics/MetricsOverview";
 import DemandForecastChart from "@/components/analytics/DemandForecastChart";
 import AnomalyDetectionChart from "@/components/analytics/AnomalyDetectionChart";
@@ -13,7 +14,7 @@ const AIPredictiveAnalytics = () => {
     // Simulate data export
     console.log("Exporting analytics data...");
     // Show a toast notification
-    window.toast?.("Analytics data exported successfully", {
+    toast("Analytics data exported successfully", {
       description: "The report has been downloaded to your device",
     });
   };
