@@ -1,155 +1,124 @@
 
-// Global payment rails integration
+import { toast } from "sonner";
 
-export interface PaymentRail {
+// Global payment rail interface
+export interface GlobalPaymentRail {
   id: string;
   name: string;
-  countryCode: string;
+  country: string;
   currency: string;
-  isAvailable: boolean;
-  processorFunction: (amount: number, recipient: string, metadata?: Record<string, string>) => Promise<RailPaymentResult>;
+  processorFunction: (amount: number, recipient: string, options?: Record<string, any>) => Promise<GlobalPaymentResult>;
 }
 
-export interface RailPaymentResult {
+export interface GlobalPaymentResult {
   success: boolean;
   transactionId?: string;
-  estimatedTimeHours?: number;
-  fees?: {
-    amount: number;
-    currency: string;
-  };
   message?: string;
-  status?: 'processing' | 'completed' | 'failed';
+  localReference?: string;
 }
 
-// Available global payment rails
-export const globalPaymentRails: PaymentRail[] = [
+// Global payment rails
+export const globalPaymentRails: GlobalPaymentRail[] = [
   {
-    id: 'upi_imps',
-    name: 'UPI/IMPS',
-    countryCode: 'IN',
+    id: 'upi',
+    name: 'UPI',
+    country: 'India',
     currency: 'INR',
-    isAvailable: true,
-    processorFunction: async (amount, recipient, metadata) => {
-      console.log(`Processing UPI/IMPS payment: ${amount} INR to ${recipient}`, metadata);
-      await new Promise(resolve => setTimeout(resolve, 1200));
+    processorFunction: async (amount, recipient, options) => {
+      console.log(`Processing UPI payment: ${amount} INR to ${recipient}`, options);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success(`UPI payment initiated`, {
+        description: `Payment of ${amount} INR to ${recipient} is being processed`,
+      });
+      
       return {
         success: true,
         transactionId: `upi_${Date.now()}`,
-        estimatedTimeHours: 0.1, // Near instant
-        fees: {
-          amount: 0,
-          currency: 'INR'
-        },
-        status: 'completed',
-        message: 'UPI payment processed successfully'
+        message: 'UPI payment initiated'
       };
     }
   },
   {
-    id: 'wechat_alipay',
-    name: 'WeChat/Alipay',
-    countryCode: 'CN',
+    id: 'wechat',
+    name: 'WeChat Pay',
+    country: 'China',
     currency: 'CNY',
-    isAvailable: true,
-    processorFunction: async (amount, recipient, metadata) => {
-      console.log(`Processing WeChat/Alipay payment: ${amount} CNY to ${recipient}`, metadata);
-      await new Promise(resolve => setTimeout(resolve, 1000));
+    processorFunction: async (amount, recipient, options) => {
+      console.log(`Processing WeChat payment: ${amount} CNY to ${recipient}`, options);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success(`WeChat Pay payment initiated`, {
+        description: `Payment of ${amount} CNY to ${recipient} is being processed`,
+      });
+      
       return {
         success: true,
         transactionId: `wechat_${Date.now()}`,
-        estimatedTimeHours: 0.1, // Near instant
-        fees: {
-          amount: amount * 0.01,
-          currency: 'CNY'
-        },
-        status: 'completed',
-        message: 'WeChat/Alipay payment processed successfully'
+        message: 'WeChat Pay payment initiated'
       };
     }
   },
   {
-    id: 'pix_spei',
-    name: 'Pix/SPEI',
-    countryCode: 'BR',
+    id: 'pix',
+    name: 'Pix',
+    country: 'Brazil',
     currency: 'BRL',
-    isAvailable: true,
-    processorFunction: async (amount, recipient, metadata) => {
-      console.log(`Processing Pix/SPEI payment: ${amount} BRL to ${recipient}`, metadata);
-      await new Promise(resolve => setTimeout(resolve, 900));
+    processorFunction: async (amount, recipient, options) => {
+      console.log(`Processing Pix payment: ${amount} BRL to ${recipient}`, options);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success(`Pix payment initiated`, {
+        description: `Payment of ${amount} BRL to ${recipient} is being processed`,
+      });
+      
       return {
         success: true,
         transactionId: `pix_${Date.now()}`,
-        estimatedTimeHours: 0.1, // Near instant
-        fees: {
-          amount: 0,
-          currency: 'BRL'
-        },
-        status: 'completed',
-        message: 'Pix payment processed successfully'
+        message: 'Pix payment initiated'
       };
     }
   },
   {
     id: 'sepa',
     name: 'SEPA',
-    countryCode: 'EU',
+    country: 'European Union',
     currency: 'EUR',
-    isAvailable: true,
-    processorFunction: async (amount, recipient, metadata) => {
-      console.log(`Processing SEPA payment: ${amount} EUR to ${recipient}`, metadata);
-      await new Promise(resolve => setTimeout(resolve, 1500));
+    processorFunction: async (amount, recipient, options) => {
+      console.log(`Processing SEPA payment: ${amount} EUR to ${recipient}`, options);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success(`SEPA payment initiated`, {
+        description: `Payment of ${amount} EUR to ${recipient} is being processed`,
+      });
+      
       return {
         success: true,
         transactionId: `sepa_${Date.now()}`,
-        estimatedTimeHours: 24, // Usually within 24 hours
-        fees: {
-          amount: 0.5,
-          currency: 'EUR'
-        },
-        status: 'processing',
-        message: 'SEPA payment initiated and being processed'
+        message: 'SEPA payment initiated'
       };
     }
   },
   {
     id: 'ach',
     name: 'ACH',
-    countryCode: 'US',
+    country: 'United States',
     currency: 'USD',
-    isAvailable: true,
-    processorFunction: async (amount, recipient, metadata) => {
-      console.log(`Processing ACH payment: ${amount} USD to ${recipient}`, metadata);
-      await new Promise(resolve => setTimeout(resolve, 1300));
+    processorFunction: async (amount, recipient, options) => {
+      console.log(`Processing ACH payment: ${amount} USD to ${recipient}`, options);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success(`ACH payment initiated`, {
+        description: `Payment of ${amount} USD to ${recipient} is being processed`,
+      });
+      
       return {
         success: true,
         transactionId: `ach_${Date.now()}`,
-        estimatedTimeHours: 72, // 1-3 business days
-        fees: {
-          amount: 0.25,
-          currency: 'USD'
-        },
-        status: 'processing',
-        message: 'ACH payment initiated and being processed'
+        message: 'ACH payment initiated'
       };
     }
   }
 ];
 
-// Get a payment rail by ID
-export const getPaymentRail = (railId: string): PaymentRail | undefined => {
-  return globalPaymentRails.find(rail => rail.id === railId);
-};
-
-// Get available payment rails for a specific country or currency
-export const getAvailableRailsForCountry = (countryCode: string): PaymentRail[] => {
-  return globalPaymentRails.filter(rail => 
-    rail.countryCode === countryCode && rail.isAvailable
-  );
-};
-
-export const getAvailableRailsForCurrency = (currency: string): PaymentRail[] => {
-  return globalPaymentRails.filter(rail => 
-    rail.currency === currency && rail.isAvailable
-  );
-};
+export default globalPaymentRails;

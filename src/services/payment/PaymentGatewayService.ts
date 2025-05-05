@@ -23,16 +23,16 @@ export interface PaymentResponse {
 const gatewayConfigs = {
   stripe: {
     apiUrl: 'https://api.stripe.com/v1',
-    publicKey: process.env.STRIPE_PUBLIC_KEY || 'pk_test_sample',
+    publicKey: import.meta.env.STRIPE_PUBLIC_KEY || 'pk_test_sample',
   },
   payfast: {
     apiUrl: 'https://api.payfast.co.za',
-    merchantId: process.env.PAYFAST_MERCHANT_ID || 'test_merchant_id',
-    merchantKey: process.env.PAYFAST_MERCHANT_KEY || 'test_merchant_key',
+    merchantId: import.meta.env.PAYFAST_MERCHANT_ID || 'test_merchant_id',
+    merchantKey: import.meta.env.PAYFAST_MERCHANT_KEY || 'test_merchant_key',
   },
   snapscan: {
     apiUrl: 'https://api.snapscan.co.za',
-    apiKey: process.env.SNAPSCAN_API_KEY || 'test_api_key',
+    apiKey: import.meta.env.SNAPSCAN_API_KEY || 'test_api_key',
   }
 };
 

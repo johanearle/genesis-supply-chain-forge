@@ -30,9 +30,9 @@ const Dashboard = () => {
         <OrderSummary />
         <RecentOrders />
       </div>
-
+      
       <PaymentIntegration />
-
+      
       <InventoryStatus />
     </div>
   );
