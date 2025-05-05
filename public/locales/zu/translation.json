@@ -1,0 +1,76 @@
+
+{
+  "app": {
+    "title": "Uhlelo Lokuphatha Izibonelelo",
+    "description": "Uhlelo oluqinile lokuphatha izimpahla, ukulandela izinkokhelo, nokubheka izinombolo zezibonelelo"
+  },
+  "navigation": {
+    "dashboard": "Ikhaya",
+    "inventory": "Izimpahla",
+    "orders": "Izinkokhelo",
+    "suppliers": "Abahlinzeki",
+    "analytics": "Uhlaziyo",
+    "advancedAnalytics": "Uhlaziyo Olujulile",
+    "settings": "Izilungiselelo"
+  },
+  "common": {
+    "search": "Sesha",
+    "notifications": "Izaziso",
+    "profile": "Iphrofayela",
+    "logout": "Phuma",
+    "loading": "Kuyalayisha...",
+    "error": "Kukhona iphutha elenzekile",
+    "save": "Londoloza",
+    "cancel": "Khansela",
+    "delete": "Susa",
+    "edit": "Hlela",
+    "add": "Engeza",
+    "filter": "Hlunga",
+    "sort": "Hlela",
+    "export": "Khipha"
+  },
+  "language": {
+    "switch": "Shintsha ulimi",
+    "changed": "Ulimi lushintshiwe",
+    "changedDescription": "Ulimi lwesithangami selushintshiwe laba {{language}}"
+  },
+  "dashboard": {
+    "title": "Ikhaya",
+    "overview": "Umbuko Omkhulu",
+    "recentOrders": "Izinkokhelo Zakamuva",
+    "inventoryStatus": "Isimo Sezimpahla",
+    "alerts": "Izaziso"
+  },
+  "inventory": {
+    "title": "Ukuphathwa Kwezimpahla",
+    "total": "Izimpahla Eziphelele",
+    "lowStock": "Izimpahla Ezincane",
+    "outOfStock": "Izimpahla Eziphelelwe",
+    "categories": "Izigaba",
+    "addItem": "Engeza Impahla",
+    "editItem": "Hlela Impahla",
+    "deleteItem": "Susa Impahla",
+    "itemName": "Igama Lempahla",
+    "category": "Isigaba",
+    "location": "Indawo",
+    "quantity": "Inani",
+    "price": "Intengo",
+    "status": "Isimo"
+  },
+  "analytics": {
+    "title": "Ideshibhodi Yohlaziyomano",
+    "metrics": "Izinombolo Ezibalulekile",
+    "insights": "Ukuhlaziya Kwe-AI",
+    "forecast": "Ukubikezela Isidingo",
+    "anomalies": "Ukuthola Izinkinga",
+    "exportReport": "Khipha Umbiko",
+    "dataUpdated": "Imininingwane igcine ukuvuselelwa",
+    "noData": "Ayikho imininingwane etholakalayo"
+  },
+  "culturalSensitivity": {
+    "passed": "Iphasile ihlolwa lokuzwelana kwamasiko",
+    "failed": "Ihlulekile ihlolwa lokuzwelana kwamasiko",
+    "score": "Amamaki okuzwelana kwamasiko: {{score}}/100",
+    "reviewNeeded": "Kudingeka ukubuyekezwa kokuzwelana kwamasiko"
+  }
+}

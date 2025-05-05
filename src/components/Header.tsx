@@ -2,6 +2,8 @@
 import { Bell, Search, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +19,8 @@ interface HeaderProps {
 }
 
 const Header = ({ setSidebarOpen }: HeaderProps) => {
+  const { t } = useTranslation();
+  
   return (
     <header className="bg-white dark:bg-gray-900 border-b px-4 py-3 flex items-center justify-between">
       <div className="flex items-center gap-4">
@@ -32,13 +36,15 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
           <Input
             type="search"
-            placeholder="Search..."
+            placeholder={t("common.search")}
             className="w-64 pl-8 bg-gray-100 dark:bg-gray-800 border-none"
           />
         </div>
       </div>
 
       <div className="flex items-center gap-3">
+        <LanguageSwitcher />
+        
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="relative">
@@ -47,11 +53,11 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-80">
-            <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+            <DropdownMenuLabel>{t("common.notifications")}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="p-3 cursor-pointer">
               <div>
-                <p className="font-medium">Low inventory alert</p>
+                <p className="font-medium">{t("inventory.lowStock")}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   Product "Widget X" is below threshold
                 </p>
@@ -103,10 +109,10 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>{t("common.profile")}</DropdownMenuItem>
+            <DropdownMenuItem>{t("navigation.settings")}</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Log out</DropdownMenuItem>
+            <DropdownMenuItem>{t("common.logout")}</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

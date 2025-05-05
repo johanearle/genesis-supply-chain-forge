@@ -1,0 +1,76 @@
+
+{
+  "app": {
+    "title": "Supply Chain Management System",
+    "description": "A robust platform for managing inventory, tracking orders, and analyzing supply chain metrics"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "inventory": "Inventory",
+    "orders": "Orders",
+    "suppliers": "Suppliers",
+    "analytics": "Analytics",
+    "advancedAnalytics": "Advanced Analytics",
+    "settings": "Settings"
+  },
+  "common": {
+    "search": "Search",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "logout": "Log out",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "filter": "Filter",
+    "sort": "Sort",
+    "export": "Export"
+  },
+  "language": {
+    "switch": "Switch language",
+    "changed": "Language changed",
+    "changedDescription": "The interface language has been changed to {{language}}"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "recentOrders": "Recent Orders",
+    "inventoryStatus": "Inventory Status",
+    "alerts": "Alerts"
+  },
+  "inventory": {
+    "title": "Inventory Management",
+    "total": "Total Items",
+    "lowStock": "Low Stock",
+    "outOfStock": "Out of Stock",
+    "categories": "Categories",
+    "addItem": "Add Item",
+    "editItem": "Edit Item",
+    "deleteItem": "Delete Item",
+    "itemName": "Item Name",
+    "category": "Category",
+    "location": "Location",
+    "quantity": "Quantity",
+    "price": "Price",
+    "status": "Status"
+  },
+  "analytics": {
+    "title": "Analytics Dashboard",
+    "metrics": "Key Metrics",
+    "insights": "AI Insights",
+    "forecast": "Demand Forecast",
+    "anomalies": "Anomaly Detection",
+    "exportReport": "Export Report",
+    "dataUpdated": "Data last updated",
+    "noData": "No data available"
+  },
+  "culturalSensitivity": {
+    "passed": "Passed cultural sensitivity check",
+    "failed": "Failed cultural sensitivity check",
+    "score": "Cultural sensitivity score: {{score}}/100",
+    "reviewNeeded": "Review needed for cultural sensitivity"
+  }
+}

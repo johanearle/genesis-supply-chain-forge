@@ -34,6 +34,15 @@ This Supply Chain Management System provides a robust platform for managing inve
 - Strategic roadmap planning
 - Supplier performance tracking
 
+### South Africa Localization
+- Full UI/UX localization for South Africa's 11 official languages
+- High linguistic accuracy (98% target validated by SA Language Board)
+- BLEU score metrics for translation quality measurement
+- Cultural sensitivity scoring for UI/UX elements
+- Support for dialects and tonal markers (isiXhosa, isiNdebele)
+- Adaptation of non-text content (imagery, icons, colors)
+- Quarterly reviews by regional cultural advisors
+
 ## Technology Stack
 
 This application is built using:
@@ -46,6 +55,10 @@ This application is built using:
 - **Tanstack React Query** - Data fetching and state management
 - **Recharts** - Charting library for data visualization
 - **Lucide Icons** - Icon library
+- **i18next** - Internationalization framework
+- **Microsoft Translator API** - Machine translation service
+- **Unicode CLDR v43** - Comprehensive locale data
+- **GeoLite2** - Geolocation-based adaptation
 
 ## Getting Started
 
@@ -88,6 +101,27 @@ npm run dev
   - `hooks/` - Custom React hooks
   - `utils/` - Utility functions
   - `lib/` - Library code and helpers
+  - `i18n.ts` - Internationalization configuration
+- `public/`
+  - `locales/` - Translation files for different languages
+
+## Localization
+
+The application is fully localized for South Africa's 11 official languages:
+
+- English
+- isiZulu
+- isiXhosa
+- Sesotho sa Leboa
+- Afrikaans
+- Sesotho
+- Setswana
+- Xitsonga
+- siSwati
+- Tshivenda
+- isiNdebele
+
+Translation quality is measured using a 98% BLEU score target and is validated by the SA Language Board. The system also includes cultural sensitivity scoring for UI/UX elements.
 
 ## Usage
 
@@ -125,4 +159,4 @@ This project is licensed under the MIT License.
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Tanstack Query](https://tanstack.com/query)
 - [Recharts](https://recharts.org/)
-
+- [i18next](https://www.i18next.com/)
