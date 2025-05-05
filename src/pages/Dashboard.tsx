@@ -5,6 +5,7 @@ import RecentAlerts from "@/components/RecentAlerts";
 import OrderSummary from "@/components/OrderSummary";
 import InventoryStatus from "@/components/InventoryStatus";
 import RecentOrders from "@/components/RecentOrders";
+import PaymentIntegration from "@/components/PaymentIntegration";
 
 const Dashboard = () => {
   return (
@@ -29,6 +30,8 @@ const Dashboard = () => {
         <OrderSummary />
         <RecentOrders />
       </div>
+
+      <PaymentIntegration />
 
       <InventoryStatus />
     </div>
