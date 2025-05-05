@@ -17,23 +17,24 @@ const Dashboard = () => {
 
       <StatusOverview />
       
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <PaymentIntegration />
+        <RecentAlerts />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <SupplyChainMap />
         </div>
         <div>
-          <RecentAlerts />
+          <OrderSummary />
         </div>
       </div>
-
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <OrderSummary />
         <RecentOrders />
+        <InventoryStatus />
       </div>
-      
-      <PaymentIntegration />
-      
-      <InventoryStatus />
     </div>
   );
 };
