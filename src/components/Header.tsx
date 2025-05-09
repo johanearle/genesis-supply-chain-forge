@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import LoginModal from "./LoginModal";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,6 +45,7 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
 
       <div className="flex items-center gap-3">
         <LanguageSwitcher />
+        <LoginModal />
         
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
