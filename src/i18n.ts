@@ -38,14 +38,22 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     
-    // BLEU score metrics information for evaluation
-    // Target: 98% linguistic accuracy
+    // Missing translations should fall back to English
     saveMissing: true,
     saveMissingTo: 'fallback',
     
     react: {
       useSuspense: true,
     },
+    
+    // Add a retry mechanism for loading translation files
+    load: 'currentOnly',
+    retry: true,
+    
+    // Prevent error spam in console for missing translations
+    parseMissingKeyHandler: (key) => {
+      return key;
+    }
   });
 
 export default i18n;

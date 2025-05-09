@@ -6,6 +6,7 @@ import OrderSummary from "@/components/OrderSummary";
 import InventoryStatus from "@/components/InventoryStatus";
 import RecentOrders from "@/components/RecentOrders";
 import PaymentIntegration from "@/components/PaymentIntegration";
+import SupplierPerformance from "@/components/SupplierPerformance";
 import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
@@ -36,7 +37,7 @@ const Dashboard = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <RecentOrders />
-        <InventoryStatus />
+        <SupplierPerformance />
       </div>
     </div>
   );

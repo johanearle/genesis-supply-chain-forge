@@ -51,7 +51,12 @@
     "culturalAdaptationScore": "Cultural adaptation score",
     "regionalCustomization": "Regional Customization",
     "regionalCustomizationDescription": "All UI elements, imagery, and content are evaluated against South African cultural guidelines. Quarterly reviews by regional cultural advisors ensure ongoing cultural relevance and sensitivity.",
-    "referenceLanguage": "Source reference language"
+    "referenceLanguage": "Source reference language",
+    "availableLanguages": "Available Languages",
+    "allLanguages": "All Languages",
+    "partial": "Partial",
+    "complete": "complete",
+    "unavailable": "Unavailable"
   },
   "login": {
     "login": "Login",
@@ -88,6 +93,7 @@
     "title": "Dashboard",
     "overview": "Overview of your supply chain operations",
     "recentOrders": "Recent Orders",
+    "recentOrdersDescription": "Latest orders in your supply chain",
     "inventoryStatus": "Inventory Status",
     "alerts": "Alerts",
     "onTimeDelivery": "On-Time Delivery",
@@ -127,6 +133,19 @@
     "supplierA": "Supplier A",
     "supplierB": "Supplier B",
     "supplierC": "Supplier C"
+  },
+  "orders": {
+    "orderId": "Order ID",
+    "customer": "Customer",
+    "date": "Date",
+    "amount": "Amount",
+    "status": "Status",
+    "status": {
+      "delivered": "Delivered",
+      "shipped": "Shipped",
+      "processing": "Processing",
+      "pending": "Pending"
+    }
   },
   "culturalSensitivity": {
     "passed": "Passed cultural sensitivity check",

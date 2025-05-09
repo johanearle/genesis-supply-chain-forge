@@ -51,7 +51,12 @@
     "culturalAdaptationScore": "Amamaki wokuzwelana kwamasiko",
     "regionalCustomization": "Ukwenza Ngokwesifunda",
     "regionalCustomizationDescription": "Zonke izingxenye ze-UI, izithombe, nokuqukethwe kuhlolwa ngokuqhathanisa nemigomo yamasiko aseNingizimu Afrika. Ukubuyekezwa okwenziwayo ngekelasi izinduna zamasiko ezifundeni kuqinisekisa ukuqhubeka kokubaluleka namahloni amasiko.",
-    "referenceLanguage": "Ulimi lokubhekisa"
+    "referenceLanguage": "Ulimi lokubhekisa",
+    "availableLanguages": "Izilimi Ezitholakalayo",
+    "allLanguages": "Zonke Izilimi",
+    "partial": "Ingxenye",
+    "complete": "kuqediwe",
+    "unavailable": "Akutholakali"
   },
   "login": {
     "login": "Ngena",
@@ -88,6 +93,7 @@
     "title": "Ikhaya",
     "overview": "Umbuko Omkhulu Wemisebenzi Yezibonelelo Zakho",
     "recentOrders": "Izinkokhelo Zakamuva",
+    "recentOrdersDescription": "Izinkokhelo zakamuva zokunikezwa kwezibonelelo zakho",
     "inventoryStatus": "Isimo Sezimpahla",
     "alerts": "Izaziso",
     "onTimeDelivery": "Ukulethwa Kwesikhathi",
@@ -127,6 +133,19 @@
     "supplierA": "Umhlinzeki A",
     "supplierB": "Umhlinzeki B",
     "supplierC": "Umhlinzeki C"
+  },
+  "orders": {
+    "orderId": "I-ID Ye-oda",
+    "customer": "Ikhasimende",
+    "date": "Usuku",
+    "amount": "Inani",
+    "status": "Isimo",
+    "status": {
+      "delivered": "Ilethiwe",
+      "shipped": "Ithunyelwe",
+      "processing": "Iyasesha",
+      "pending": "Ilindile"
+    }
   },
   "culturalSensitivity": {
     "passed": "Iphasile ihlolwa lokuzwelana kwamasiko",

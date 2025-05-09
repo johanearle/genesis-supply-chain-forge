@@ -16,6 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 const orders = [
   {
@@ -56,21 +57,23 @@ const orders = [
 ];
 
 const RecentOrders = () => {
+  const { t } = useTranslation();
+  
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle>Recent Orders</CardTitle>
-        <CardDescription>Latest orders in your supply chain</CardDescription>
+        <CardTitle>{t('dashboard.recentOrders')}</CardTitle>
+        <CardDescription>{t('dashboard.recentOrdersDescription', 'Latest orders in your supply chain')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Order ID</TableHead>
-              <TableHead>Customer</TableHead>
-              <TableHead>Date</TableHead>
-              <TableHead>Amount</TableHead>
-              <TableHead>Status</TableHead>
+              <TableHead>{t('orders.orderId')}</TableHead>
+              <TableHead>{t('orders.customer')}</TableHead>
+              <TableHead>{t('orders.date')}</TableHead>
+              <TableHead>{t('orders.amount')}</TableHead>
+              <TableHead>{t('orders.status')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -89,7 +92,7 @@ const RecentOrders = () => {
                       order.status === "Pending" && "bg-gray-500"
                     )}
                   >
-                    {order.status}
+                    {t(`orders.status.${order.status.toLowerCase()}`, order.status)}
                   </Badge>
                 </TableCell>
               </TableRow>
