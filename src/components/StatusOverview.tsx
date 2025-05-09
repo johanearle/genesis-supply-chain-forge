@@ -2,14 +2,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, AlertTriangle, XCircle, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const StatusOverview = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <Card>
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
-            On-Time Delivery
+            {t('dashboard.onTimeDelivery')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -21,7 +24,7 @@ const StatusOverview = () => {
           </div>
           <Progress value={92} className="h-1 mt-3" />
           <p className="text-xs text-muted-foreground mt-2">
-            +2.5% from last month
+            +2.5% {t('dashboard.fromLastMonth')}
           </p>
         </CardContent>
       </Card>
@@ -29,7 +32,7 @@ const StatusOverview = () => {
       <Card>
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
-            Inventory Accuracy
+            {t('dashboard.inventoryAccuracy')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -41,7 +44,7 @@ const StatusOverview = () => {
           </div>
           <Progress value={96} className="h-1 mt-3" />
           <p className="text-xs text-muted-foreground mt-2">
-            +1.2% from last month
+            +1.2% {t('dashboard.fromLastMonth')}
           </p>
         </CardContent>
       </Card>
@@ -49,7 +52,7 @@ const StatusOverview = () => {
       <Card>
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
-            Order Fulfillment
+            {t('dashboard.orderFulfillment')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -61,7 +64,7 @@ const StatusOverview = () => {
           </div>
           <Progress value={87} className="h-1 mt-3" />
           <p className="text-xs text-muted-foreground mt-2">
-            -3.1% from last month
+            -3.1% {t('dashboard.fromLastMonth')}
           </p>
         </CardContent>
       </Card>
@@ -69,7 +72,7 @@ const StatusOverview = () => {
       <Card>
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
-            Supplier Reliability
+            {t('dashboard.supplierReliability')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -81,7 +84,7 @@ const StatusOverview = () => {
           </div>
           <Progress value={94} className="h-1 mt-3" />
           <p className="text-xs text-muted-foreground mt-2">
-            +0.8% from last month
+            +0.8% {t('dashboard.fromLastMonth')}
           </p>
         </CardContent>
       </Card>

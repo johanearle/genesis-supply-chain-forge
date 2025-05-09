@@ -86,10 +86,15 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "overview": "Overview",
+    "overview": "Overview of your supply chain operations",
     "recentOrders": "Recent Orders",
     "inventoryStatus": "Inventory Status",
-    "alerts": "Alerts"
+    "alerts": "Alerts",
+    "onTimeDelivery": "On-Time Delivery",
+    "inventoryAccuracy": "Inventory Accuracy",
+    "orderFulfillment": "Order Fulfillment",
+    "supplierReliability": "Supplier Reliability",
+    "fromLastMonth": "from last month"
   },
   "inventory": {
     "title": "Inventory Management",
@@ -116,6 +121,12 @@
     "exportReport": "Export Report",
     "dataUpdated": "Data last updated",
     "noData": "No data available"
+  },
+  "suppliers": {
+    "performance": "Supplier Performance",
+    "supplierA": "Supplier A",
+    "supplierB": "Supplier B",
+    "supplierC": "Supplier C"
   },
   "culturalSensitivity": {
     "passed": "Passed cultural sensitivity check",

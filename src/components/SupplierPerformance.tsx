@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const data = [
   {
@@ -41,10 +42,12 @@ const data = [
 ];
 
 const SupplierPerformance = () => {
+  const { t } = useTranslation();
+  
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle>Supplier Performance</CardTitle>
+        <CardTitle>{t('suppliers.performance')}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[300px]">
@@ -58,9 +61,9 @@ const SupplierPerformance = () => {
               <YAxis domain={[70, 100]} />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="supplierA" name="Supplier A" stroke="#0ea5e9" activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="supplierB" name="Supplier B" stroke="#6366f1" />
-              <Line type="monotone" dataKey="supplierC" name="Supplier C" stroke="#f97316" />
+              <Line type="monotone" dataKey="supplierA" name={t('suppliers.supplierA')} stroke="#0ea5e9" activeDot={{ r: 8 }} />
+              <Line type="monotone" dataKey="supplierB" name={t('suppliers.supplierB')} stroke="#6366f1" />
+              <Line type="monotone" dataKey="supplierC" name={t('suppliers.supplierC')} stroke="#f97316" />
             </LineChart>
           </ResponsiveContainer>
         </div>

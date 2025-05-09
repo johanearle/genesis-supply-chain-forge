@@ -6,13 +6,16 @@ import OrderSummary from "@/components/OrderSummary";
 import InventoryStatus from "@/components/InventoryStatus";
 import RecentOrders from "@/components/RecentOrders";
 import PaymentIntegration from "@/components/PaymentIntegration";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-        <p className="text-muted-foreground mt-1">Overview of your supply chain operations</p>
+        <h1 className="text-3xl font-bold">{t('dashboard.title')}</h1>
+        <p className="text-muted-foreground mt-1">{t('dashboard.overview')}</p>
       </div>
 
       <StatusOverview />

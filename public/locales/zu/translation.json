@@ -27,7 +27,9 @@
     "add": "Engeza",
     "filter": "Hlunga",
     "sort": "Hlela",
-    "export": "Khipha"
+    "export": "Khipha",
+    "grid": "Ukubuka Kwegridi",
+    "list": "Ukubuka Kohlu"
   },
   "language": {
     "switch": "Shintsha ulimi",
@@ -38,7 +40,18 @@
     "moreLanguages": "Ezinye izilimi...",
     "officialLanguages": "Khetha kwezilimi ezisemthethweni ezingu-11 zaseNingizimu Afrika",
     "translationComplete": "{{percentage}}% kuhunyushiwe",
-    "changeLanguage": "Shintsha Ulimi"
+    "partialTranslation": "Ukuhumusha okungagcwele",
+    "changeLanguage": "Shintsha Ulimi",
+    "languages": "Izilimi",
+    "translationQualityMetrics": "Izinkomba Zekhwalithi Yokuhumusha",
+    "linguisticAccuracy": "Ukunemba Kolwazi Lwezilimi",
+    "culturalSensitivityScore": "Amamaki Okuzwelana Kwamasiko",
+    "machineTranslationQuality": "Amamaki ekhwalithi yokuhumusha kwemishini",
+    "validatedBy": "Kuqinisekiswe ngu",
+    "culturalAdaptationScore": "Amamaki wokuzwelana kwamasiko",
+    "regionalCustomization": "Ukwenza Ngokwesifunda",
+    "regionalCustomizationDescription": "Zonke izingxenye ze-UI, izithombe, nokuqukethwe kuhlolwa ngokuqhathanisa nemigomo yamasiko aseNingizimu Afrika. Ukubuyekezwa okwenziwayo ngekelasi izinduna zamasiko ezifundeni kuqinisekisa ukuqhubeka kokubaluleka namahloni amasiko.",
+    "referenceLanguage": "Ulimi lokubhekisa"
   },
   "login": {
     "login": "Ngena",
@@ -73,10 +86,15 @@
   },
   "dashboard": {
     "title": "Ikhaya",
-    "overview": "Umbuko Omkhulu",
+    "overview": "Umbuko Omkhulu Wemisebenzi Yezibonelelo Zakho",
     "recentOrders": "Izinkokhelo Zakamuva",
     "inventoryStatus": "Isimo Sezimpahla",
-    "alerts": "Izaziso"
+    "alerts": "Izaziso",
+    "onTimeDelivery": "Ukulethwa Kwesikhathi",
+    "inventoryAccuracy": "Ukunemba Kwempahla",
+    "orderFulfillment": "Ukugcwaliswa Kwezinkokhelo",
+    "supplierReliability": "Ukuthembeka Komhlinzeki",
+    "fromLastMonth": "kusuka enyangeni edlule"
   },
   "inventory": {
     "title": "Ukuphathwa Kwezimpahla",
@@ -103,6 +121,12 @@
     "exportReport": "Khipha Umbiko",
     "dataUpdated": "Imininingwane igcine ukuvuselelwa",
     "noData": "Ayikho imininingwane etholakalayo"
+  },
+  "suppliers": {
+    "performance": "Ukusebenza Kwabahlinzeki",
+    "supplierA": "Umhlinzeki A",
+    "supplierB": "Umhlinzeki B",
+    "supplierC": "Umhlinzeki C"
   },
   "culturalSensitivity": {
     "passed": "Iphasile ihlolwa lokuzwelana kwamasiko",
