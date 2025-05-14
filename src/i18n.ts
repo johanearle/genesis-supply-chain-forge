@@ -55,4 +55,37 @@ i18n
     }
   });
 
+// Add new translation keys
+i18n.addResources('en', 'translation', {
+  settings: {
+    languageRegion: 'Language & Region',
+    languageSettings: 'Language Settings',
+    regionalSettings: 'Regional Settings'
+  }
+});
+
+i18n.addResources('zu', 'translation', {
+  settings: {
+    languageRegion: 'Ulimi Nesifunda',
+    languageSettings: 'Izilungiselelo Zolimi',
+    regionalSettings: 'Izilungiselelo Zesifunda'
+  }
+});
+
+i18n.addResources('af', 'translation', {
+  settings: {
+    languageRegion: 'Taal & Streek',
+    languageSettings: 'Taalinstellings',
+    regionalSettings: 'Streeksinstellings'
+  }
+});
+
+i18n.addResources('xh', 'translation', {
+  settings: {
+    languageRegion: 'Ulwimi Nommandla',
+    languageSettings: 'Iisethingi Zolwimi',
+    regionalSettings: 'Iisethingi Zommandla'
+  }
+});
+
 export default i18n;

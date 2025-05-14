@@ -72,10 +72,10 @@ const LocalizationSettings = () => {
         <CardHeader>
           <div className="flex items-center space-x-2">
             <Languages className="h-5 w-5 text-primary" />
-            <CardTitle>{t('language.selectLanguage')}</CardTitle>
+            <CardTitle>{t('settings.languageSettings', 'Language Settings')}</CardTitle>
           </div>
           <CardDescription>
-            {t('language.officialLanguages')}
+            {t('language.chooseYourPreferredLanguage', 'Choose your preferred language from South Africa\'s official languages')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -110,14 +110,14 @@ const LocalizationSettings = () => {
                             {isCurrentLanguage && (
                               <Badge variant="outline" className="ml-2">
                                 <Check className="h-3 w-3 mr-1" />
-                                {t('language.current')}
+                                {t('language.current', 'Current')}
                               </Badge>
                             )}
                           </div>
                           
                           <div className="mt-2">
                             <div className="flex justify-between text-xs mb-1">
-                              <span>{t('language.translationComplete', { percentage: completeness })}</span>
+                              <span>{t('language.available', 'Available')}</span>
                               <span className={completeness < 80 ? 'text-amber-500' : 'text-green-500'}>
                                 {completeness}%
                               </span>
@@ -131,7 +131,7 @@ const LocalizationSettings = () => {
                           
                           {language.code === 'en' && (
                             <p className="text-xs text-muted-foreground mt-2">
-                              {t('language.referenceLanguage')}
+                              {t('language.defaultLanguage', 'Default language')}
                             </p>
                           )}
                         </div>
@@ -147,7 +147,8 @@ const LocalizationSettings = () => {
                 {Object.entries(languageGroups).map(([groupKey, codes]) => (
                   <div key={groupKey} className="space-y-3">
                     <h4 className="text-sm font-semibold text-muted-foreground uppercase pl-2">
-                      {groupKey.charAt(0).toUpperCase() + groupKey.slice(1)} {t('language.languages')}
+                      {groupKey === 'nguni' ? 'Nguni Languages' : 
+                       groupKey === 'sotho' ? 'Sotho Languages' : 'Other Languages'}
                     </h4>
                     <RadioGroup defaultValue={i18n.language} onValueChange={handleLanguageChange} className="space-y-2">
                       {codes.map(code => {
@@ -174,7 +175,7 @@ const LocalizationSettings = () => {
                                 {completeness < 80 && (
                                   <Badge variant="outline" className="ml-2 text-amber-500 border-amber-200">
                                     <AlertTriangle className="h-3 w-3 mr-1" />
-                                    {t('language.partialTranslation')}
+                                    {t('language.partialSupport', 'Partial Support')}
                                   </Badge>
                                 )}
                               </div>
@@ -200,34 +201,34 @@ const LocalizationSettings = () => {
           </Tabs>
           
           <div className="pt-4 border-t">
-            <h3 className="font-medium mb-4">{t('language.translationQualityMetrics')}</h3>
+            <h3 className="font-medium mb-4">{t('settings.translationQuality', 'Translation Quality')}</h3>
             
             <div className="space-y-4">
               <div>
                 <div className="flex justify-between mb-1">
-                  <Label>BLEU Score</Label>
+                  <Label>{t('language.machineTranslationScore', 'Machine Translation Score')}</Label>
                   <span className="text-sm font-medium">{translationMetrics.bleuScore}%</span>
                 </div>
                 <Progress value={translationMetrics.bleuScore} className="h-2" />
                 <p className="text-xs text-muted-foreground mt-1">
-                  {t('language.machineTranslationQuality')} (target: 98%)
+                  {t('language.aiTranslationQuality', 'AI-powered translation quality')} (target: 98%)
                 </p>
               </div>
               
               <div>
                 <div className="flex justify-between mb-1">
-                  <Label>{t('language.linguisticAccuracy')}</Label>
+                  <Label>{t('language.humanVerifiedAccuracy', 'Human-verified Accuracy')}</Label>
                   <span className="text-sm font-medium">{translationMetrics.linguisticAccuracy}%</span>
                 </div>
                 <Progress value={translationMetrics.linguisticAccuracy} className="h-2" />
                 <p className="text-xs text-muted-foreground mt-1">
-                  {t('language.validatedBy')} {translationMetrics.validatedBy} on {translationMetrics.lastValidated}
+                  {t('language.verifiedBy', 'Verified by')} {translationMetrics.validatedBy} on {translationMetrics.lastValidated}
                 </p>
               </div>
               
               <div>
                 <div className="flex justify-between mb-1">
-                  <Label>{t('language.culturalSensitivityScore')}</Label>
+                  <Label>{t('language.culturalSensitivity', 'Cultural Sensitivity')}</Label>
                   <span className="text-sm font-medium">{translationMetrics.culturalSensitivityScore}/100</span>
                 </div>
                 <Progress 
@@ -236,7 +237,7 @@ const LocalizationSettings = () => {
                   color={translationMetrics.culturalSensitivityScore < CULTURAL_SENSITIVITY_THRESHOLD ? 'bg-amber-500' : undefined}
                 />
                 <p className="text-xs text-muted-foreground mt-1">
-                  {t('language.culturalAdaptationScore')} (threshold: {CULTURAL_SENSITIVITY_THRESHOLD}/100)
+                  {t('language.culturalAppropriateness', 'Cultural appropriateness score')} (threshold: {CULTURAL_SENSITIVITY_THRESHOLD}/100)
                 </p>
               </div>
             </div>
@@ -244,9 +245,9 @@ const LocalizationSettings = () => {
           
           <Alert className="mt-4">
             <Globe className="h-4 w-4" />
-            <AlertTitle>{t('language.regionalCustomization')}</AlertTitle>
+            <AlertTitle>{t('settings.regionalSettings', 'Regional Settings')}</AlertTitle>
             <AlertDescription>
-              {t('language.regionalCustomizationDescription')}
+              {t('language.regionalDescription', 'Your content and interface will be adapted to reflect local customs, currencies, and formats.')}
             </AlertDescription>
           </Alert>
         </CardContent>
