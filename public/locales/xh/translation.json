@@ -1,7 +1,47 @@
 
 {
   "app": {
-    "title": "Supply Chain Management System",
-    "description": "A robust platform for managing inventory, tracking orders, and analyzing supply chain metrics"
+    "title": "Inkqubo Yokulawula Izibonelelo",
+    "description": "Iplatifomu eqinileyo yokulawula uvimba, ukulandela ii-oda, kunye nohlalutyo lwemilinganiselo yolungiselelo"
+  },
+  "navigation": {
+    "dashboard": "Ideshibhodi",
+    "inventory": "Uvimba",
+    "orders": "Ii-oda",
+    "suppliers": "Ababoneleli",
+    "analytics": "Uhlalutyo",
+    "advancedAnalytics": "Uhlalutyo Olugqithisileyo",
+    "settings": "Iisetingi"
+  },
+  "common": {
+    "search": "Khangela",
+    "notifications": "Izaziso",
+    "profile": "Iprofayile",
+    "logout": "Phuma",
+    "loading": "Iyalayisha...",
+    "error": "Kukho impazamo eyenzekileyo",
+    "save": "Gcina",
+    "cancel": "Rhoxisa",
+    "delete": "Cima",
+    "edit": "Hlela",
+    "add": "Yongeza",
+    "filter": "Hluza",
+    "sort": "Hlela",
+    "export": "Thumela",
+    "grid": "Imbonakalo yeGrid",
+    "list": "Imbonakalo yoLuhlu"
+  },
+  "dashboard": {
+    "title": "Ideshibhodi",
+    "overview": "Inkcazelo yomsebenzi wezibonelelo zakho",
+    "recentOrders": "Ii-oda Zakutsha",
+    "recentOrdersDescription": "Ii-oda zakutsha kulungiselelo lwezibonelelo zakho",
+    "inventoryStatus": "Isimo soVimba",
+    "alerts": "Izilumkiso",
+    "onTimeDelivery": "Unikezelo ngexesha",
+    "inventoryAccuracy": "Uchaneko loVimba",
+    "orderFulfillment": "Ukuzalisekiswa kwe-oda",
+    "supplierReliability": "Ukuthembeka koMboneleli",
+    "fromLastMonth": "ukusuka kwinyanga edlulileyo"
   }
 }

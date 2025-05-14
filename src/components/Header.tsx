@@ -61,32 +61,32 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
               <div>
                 <p className="font-medium">{t("inventory.lowStock")}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Product "Widget X" is below threshold
+                  {t("inventory.lowStockDescription", "Product \"Widget X\" is below threshold")}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                  2 minutes ago
+                  {t("common.minutesAgo", "2 minutes ago")}
                 </p>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem className="p-3 cursor-pointer">
               <div>
-                <p className="font-medium">Order #12345 shipped</p>
+                <p className="font-medium">{t("orders.orderShipped", "Order #12345 shipped")}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Package is on its way to customer
+                  {t("orders.packageOnWay", "Package is on its way to customer")}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                  1 hour ago
+                  {t("common.hoursAgo", "1 hour ago")}
                 </p>
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem className="p-3 cursor-pointer">
               <div>
-                <p className="font-medium">New supplier request</p>
+                <p className="font-medium">{t("suppliers.newSupplierRequest", "New supplier request")}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Supplier "ABC Corp" wants to connect
+                  {t("suppliers.supplierWantsToConnect", "Supplier \"ABC Corp\" wants to connect")}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                  2 days ago
+                  {t("common.daysAgo", "2 days ago")}
                 </p>
               </div>
             </DropdownMenuItem>
@@ -103,9 +103,9 @@ const Header = ({ setSidebarOpen }: HeaderProps) => {
                 </AvatarFallback>
               </Avatar>
               <div className="hidden md:block text-left">
-                <p className="text-sm font-medium">John Doe</p>
+                <p className="text-sm font-medium">{t("user.name", "John Doe")}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Administrator
+                  {t("user.role", "Administrator")}
                 </p>
               </div>
             </Button>

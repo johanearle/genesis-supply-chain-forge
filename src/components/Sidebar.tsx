@@ -12,23 +12,26 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface SidebarProps {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
 
-const navItems = [
-  { name: "Dashboard", path: "/", icon: Home },
-  { name: "Inventory", path: "/inventory", icon: Package2 },
-  { name: "Orders", path: "/orders", icon: ClipboardList },
-  { name: "Suppliers", path: "/suppliers", icon: Users },
-  { name: "Analytics", path: "/analytics", icon: BarChart3 },
-  { name: "Advanced Analytics", path: "/advanced-analytics", icon: Zap },
-  { name: "Settings", path: "/settings", icon: Settings },
-];
-
 const Sidebar = ({ open, setOpen }: SidebarProps) => {
+  const { t } = useTranslation();
+
+  const navItems = [
+    { name: t("navigation.dashboard"), path: "/", icon: Home },
+    { name: t("navigation.inventory"), path: "/inventory", icon: Package2 },
+    { name: t("navigation.orders"), path: "/orders", icon: ClipboardList },
+    { name: t("navigation.suppliers"), path: "/suppliers", icon: Users },
+    { name: t("navigation.analytics"), path: "/analytics", icon: BarChart3 },
+    { name: t("navigation.advancedAnalytics"), path: "/advanced-analytics", icon: Zap },
+    { name: t("navigation.settings"), path: "/settings", icon: Settings },
+  ];
+  
   return (
     <>
       {/* Mobile backdrop */}
@@ -51,7 +54,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
             <div className="h-8 w-8 rounded-full bg-scm-accent flex items-center justify-center mr-2">
               <span className="font-bold text-scm-primary">SC</span>
             </div>
-            <span className="font-bold text-lg">SupplyChain</span>
+            <span className="font-bold text-lg">{t("app.title", "SupplyChain")}</span>
           </div>
           <Button
             variant="ghost"
@@ -66,7 +69,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         <nav className="p-4 space-y-1">
           {navItems.map((item) => (
             <NavLink
-              key={item.name}
+              key={item.path}
               to={item.path}
               className={({ isActive }) =>
                 cn(
@@ -86,8 +89,8 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
 
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <div className="bg-scm-accent/20 rounded-md p-3">
-            <p className="text-sm font-medium">Supply Chain MVP</p>
-            <p className="text-xs text-white/70 mt-1">Next-Gen Enterprise System</p>
+            <p className="text-sm font-medium">{t("app.title", "Supply Chain MVP")}</p>
+            <p className="text-xs text-white/70 mt-1">{t("app.description", "Next-Gen Enterprise System")}</p>
           </div>
         </div>
       </aside>

@@ -48,7 +48,6 @@ i18n
     
     // Add a retry mechanism for loading translation files
     load: 'currentOnly',
-    retry: true,
     
     // Prevent error spam in console for missing translations
     parseMissingKeyHandler: (key) => {

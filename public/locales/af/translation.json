@@ -1,7 +1,47 @@
 
 {
   "app": {
-    "title": "Supply Chain Management System",
-    "description": "A robust platform for managing inventory, tracking orders, and analyzing supply chain metrics"
+    "title": "Voorsieningskettingbeheerstelsel",
+    "description": "ʼn Stewige platform vir die bestuur van voorraad, die opspoor van bestellings en die ontleding van voorsieningskettingmetrieke"
+  },
+  "navigation": {
+    "dashboard": "Paneelbord",
+    "inventory": "Voorraad",
+    "orders": "Bestellings",
+    "suppliers": "Verskaffers",
+    "analytics": "Analise",
+    "advancedAnalytics": "Gevorderde Analise",
+    "settings": "Instellings"
+  },
+  "common": {
+    "search": "Soek",
+    "notifications": "Kennisgewings",
+    "profile": "Profiel",
+    "logout": "Teken uit",
+    "loading": "Laai...",
+    "error": "ʼn Fout het voorgekom",
+    "save": "Stoor",
+    "cancel": "Kanselleer",
+    "delete": "Vee uit",
+    "edit": "Redigeer",
+    "add": "Voeg by",
+    "filter": "Filter",
+    "sort": "Sorteer",
+    "export": "Uitvoer",
+    "grid": "Roosteraansig",
+    "list": "Lysaansig"
+  },
+  "dashboard": {
+    "title": "Paneelbord",
+    "overview": "Oorsig van jou voorsieningskettingbedrywighede",
+    "recentOrders": "Onlangse Bestellings",
+    "recentOrdersDescription": "Jongste bestellings in jou voorsieningsketting",
+    "inventoryStatus": "Voorraadstatus",
+    "alerts": "Waarskuwings",
+    "onTimeDelivery": "Betyds Aflewering",
+    "inventoryAccuracy": "Voorraadakkuraatheid",
+    "orderFulfillment": "Bestelvoltooiing",
+    "supplierReliability": "Verskaffer Betroubaarheid",
+    "fromLastMonth": "van verlede maand"
   }
 }
