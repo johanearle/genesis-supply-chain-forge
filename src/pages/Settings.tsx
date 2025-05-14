@@ -19,7 +19,7 @@ const Settings = () => {
       <Tabs defaultValue="general">
         <TabsList className="grid grid-cols-3 mb-6 w-full max-w-md">
           <TabsTrigger value="general">General</TabsTrigger>
-          <TabsTrigger value="localization">{t("settings.languageRegion", "Language & Region")}</TabsTrigger>
+          <TabsTrigger value="localization">Language Option</TabsTrigger>
           <TabsTrigger value="notifications">Notifications</TabsTrigger>
         </TabsList>
         
