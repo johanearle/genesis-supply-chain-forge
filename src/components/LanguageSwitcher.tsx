@@ -176,7 +176,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
             </TabsList>
             
             <TabsContent value="grid" className="max-h-[60vh] overflow-y-auto pr-1">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <RadioGroup value={selectedLanguage} onValueChange={setSelectedLanguage} className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {supportedLanguages.map(language => {
                   const code = language.code;
                   const completeness = getTranslationCompleteness(code);
@@ -191,7 +191,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
                       onClick={() => setSelectedLanguage(code)}
                     >
                       <div className="flex items-center gap-2">
-                        <RadioGroupItem value={code} id={`lang-${code}`} checked={selectedLanguage === code} />
+                        <RadioGroupItem value={code} id={`lang-${code}`} />
                         <Label htmlFor={`lang-${code}`} className="text-base font-medium">
                           {language.name}
                         </Label>
@@ -216,7 +216,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
                     </div>
                   );
                 })}
-              </div>
+              </RadioGroup>
             </TabsContent>
             
             <TabsContent value="list" className="max-h-[60vh] overflow-y-auto pr-1">
@@ -225,7 +225,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
                   <h3 className="text-sm font-medium mb-2 text-muted-foreground">
                     {getLanguageGroupName(groupKey)}
                   </h3>
-                  <div className="space-y-2">
+                  <RadioGroup value={selectedLanguage} onValueChange={setSelectedLanguage} className="space-y-2">
                     {languageGroups[groupKey as keyof typeof languageGroups].map(code => {
                       const language = supportedLanguages.find(l => l.code === code);
                       if (!language) return null;
@@ -244,7 +244,6 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
                           <RadioGroupItem 
                             value={code} 
                             id={`list-${code}`} 
-                            checked={selectedLanguage === code}
                           />
                           <div className="ml-3 flex-1">
                             <div className="flex items-center justify-between">
@@ -272,7 +271,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
                         </div>
                       );
                     })}
-                  </div>
+                  </RadioGroup>
                 </div>
               ))}
             </TabsContent>

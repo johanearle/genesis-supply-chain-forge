@@ -149,7 +149,7 @@ const LocalizationSettings = () => {
                     <h4 className="text-sm font-semibold text-muted-foreground uppercase pl-2">
                       {groupKey.charAt(0).toUpperCase() + groupKey.slice(1)} {t('language.languages')}
                     </h4>
-                    <div className="space-y-2">
+                    <RadioGroup defaultValue={i18n.language} onValueChange={handleLanguageChange} className="space-y-2">
                       {codes.map(code => {
                         const language = supportedLanguages.find(lang => lang.code === code);
                         if (!language) return null;
@@ -165,8 +165,6 @@ const LocalizationSettings = () => {
                             <RadioGroupItem 
                               value={code} 
                               id={`list-lang-${code}`} 
-                              checked={isCurrentLanguage}
-                              onClick={() => handleLanguageChange(code)}
                             />
                             <div className="ml-3 flex-1">
                               <div className="flex items-center justify-between">
@@ -194,7 +192,7 @@ const LocalizationSettings = () => {
                           </div>
                         );
                       })}
-                    </div>
+                    </RadioGroup>
                   </div>
                 ))}
               </div>
