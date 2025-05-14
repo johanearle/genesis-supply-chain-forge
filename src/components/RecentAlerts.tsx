@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 const alerts = [
   {
@@ -41,18 +42,20 @@ const alerts = [
 ];
 
 const RecentAlerts = () => {
+  const { t } = useTranslation();
+  
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle>Recent Alerts</CardTitle>
-        <CardDescription>Latest notifications from your supply chain</CardDescription>
+        <CardTitle>{t('dashboard.alerts')}</CardTitle>
+        <CardDescription>{t('alerts.latestNotifications')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         {alerts.map((alert) => (
           <div key={alert.id} className="flex items-start gap-4 p-3 rounded-lg border bg-card">
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <h4 className="font-medium">{alert.title}</h4>
+                <h4 className="font-medium">{t(`alerts.items.${alert.id}.title`, alert.title)}</h4>
                 <Badge
                   className={cn(
                     "ml-auto",
@@ -61,14 +64,14 @@ const RecentAlerts = () => {
                     alert.severity === "low" && "bg-blue-500"
                   )}
                 >
-                  {alert.severity}
+                  {t(`alerts.severity.${alert.severity}`)}
                 </Badge>
               </div>
               <p className="text-sm text-muted-foreground mt-1">
-                {alert.description}
+                {t(`alerts.items.${alert.id}.description`, alert.description)}
               </p>
               <p className="text-xs text-muted-foreground/70 mt-2">
-                {alert.time}
+                {t(`alerts.items.${alert.id}.time`, alert.time)}
               </p>
             </div>
           </div>

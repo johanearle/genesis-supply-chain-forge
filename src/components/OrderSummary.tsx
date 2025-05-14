@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { name: "Jan", completed: 65, pending: 28, cancelled: 7 },
@@ -17,13 +18,15 @@ const data = [
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
+  const { t } = useTranslation();
+  
   if (active && payload && payload.length) {
     return (
       <div className="bg-background p-3 border rounded-md shadow-sm">
         <p className="font-medium mb-1">{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
-            {entry.name}: {entry.value}
+            {t(`orders.status.${entry.name.toLowerCase()}`)}: {entry.value}
           </p>
         ))}
       </div>
@@ -33,10 +36,12 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const OrderSummary = () => {
+  const { t } = useTranslation();
+  
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Order Status Summary</CardTitle>
+        <CardTitle>{t('orders.statusSummary')}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[250px]">
@@ -45,9 +50,9 @@ const OrderSummary = () => {
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip content={<CustomTooltip />} />
-              <Bar dataKey="completed" stackId="a" fill="#10b981" name="Completed" />
-              <Bar dataKey="pending" stackId="a" fill="#f59e0b" name="Pending" />
-              <Bar dataKey="cancelled" stackId="a" fill="#ef4444" name="Cancelled" />
+              <Bar dataKey="completed" stackId="a" fill="#10b981" name={t('orders.status.delivered')} />
+              <Bar dataKey="pending" stackId="a" fill="#f59e0b" name={t('orders.status.pending')} />
+              <Bar dataKey="cancelled" stackId="a" fill="#ef4444" name={t('orders.status.cancelled')} />
             </BarChart>
           </ResponsiveContainer>
         </div>

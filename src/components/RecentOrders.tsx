@@ -24,35 +24,35 @@ const orders = [
     customer: "Acme Corp",
     date: "2025-04-25",
     amount: "$5,234.89",
-    status: "Delivered",
+    status: "delivered",
   },
   {
     id: "ORD-123457",
     customer: "TechGiant Inc",
     date: "2025-04-28",
     amount: "$2,127.36",
-    status: "Processing",
+    status: "processing",
   },
   {
     id: "ORD-123458",
     customer: "Global Industries",
     date: "2025-04-28",
     amount: "$8,753.00",
-    status: "Shipped",
+    status: "shipped",
   },
   {
     id: "ORD-123459",
     customer: "Local Business Co",
     date: "2025-04-30",
     amount: "$1,432.25",
-    status: "Processing",
+    status: "processing",
   },
   {
     id: "ORD-123460",
     customer: "Mega Enterprises",
     date: "2025-05-01",
     amount: "$4,378.50",
-    status: "Pending",
+    status: "pending",
   },
 ];
 
@@ -63,7 +63,7 @@ const RecentOrders = () => {
     <Card className="h-full">
       <CardHeader>
         <CardTitle>{t('dashboard.recentOrders')}</CardTitle>
-        <CardDescription>{t('dashboard.recentOrdersDescription', 'Latest orders in your supply chain')}</CardDescription>
+        <CardDescription>{t('dashboard.recentOrdersDescription')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -86,13 +86,14 @@ const RecentOrders = () => {
                 <TableCell>
                   <Badge
                     className={cn(
-                      order.status === "Delivered" && "bg-green-500",
-                      order.status === "Shipped" && "bg-blue-500",
-                      order.status === "Processing" && "bg-yellow-500",
-                      order.status === "Pending" && "bg-gray-500"
+                      order.status === "delivered" && "bg-green-500",
+                      order.status === "shipped" && "bg-blue-500",
+                      order.status === "processing" && "bg-yellow-500",
+                      order.status === "pending" && "bg-gray-500"
                     )}
                   >
-                    {t(`orders.status.${order.status.toLowerCase()}`, order.status)}
+                    {/* Use the correct path to access the translation strings */}
+                    {t(`orders.status.${order.status}`)}
                   </Badge>
                 </TableCell>
               </TableRow>

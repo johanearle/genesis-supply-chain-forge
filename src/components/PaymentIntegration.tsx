@@ -10,8 +10,10 @@ import { PaymentGateway, processPayment } from '@/services/payment/PaymentGatewa
 import { listAvailableBanks } from '@/services/payment/SouthAfricanBankAdapters';
 import { getAvailablePaymentMethods } from '@/services/payment/LocalizedPaymentMethods';
 import { globalPaymentRails } from '@/services/payment/GlobalPaymentRails';
+import { useTranslation } from "react-i18next";
 
 const PaymentIntegration = () => {
+  const { t } = useTranslation();
   const [amount, setAmount] = useState<string>('100.00');
   const [selectedGateway, setSelectedGateway] = useState<PaymentGateway>('stripe');
   const [selectedBank, setSelectedBank] = useState<string>('');
@@ -64,21 +66,21 @@ const PaymentIntegration = () => {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Banking & Open Finance Integration</CardTitle>
+        <CardTitle>{t('payment.integration')}</CardTitle>
         <CardDescription>
-          Process payments through various payment methods and banking integrations
+          {t('payment.description')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="gateways" className="w-full">
           <TabsList className="grid grid-cols-3 mb-4">
-            <TabsTrigger value="gateways">Payment Gateways</TabsTrigger>
-            <TabsTrigger value="banks">SA Banks</TabsTrigger>
-            <TabsTrigger value="global">Global Rails</TabsTrigger>
+            <TabsTrigger value="gateways">{t('payment.gateways')}</TabsTrigger>
+            <TabsTrigger value="banks">{t('payment.saBanks')}</TabsTrigger>
+            <TabsTrigger value="global">{t('payment.globalRails')}</TabsTrigger>
           </TabsList>
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Amount (ZAR)</label>
+            <label className="block text-sm font-medium mb-1">{t('payment.amount')} (ZAR)</label>
             <Input
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -92,10 +94,10 @@ const PaymentIntegration = () => {
           <TabsContent value="gateways">
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Select Payment Gateway</label>
+                <label className="block text-sm font-medium mb-1">{t('payment.selectGateway')}</label>
                 <Select value={selectedGateway} onValueChange={(value) => setSelectedGateway(value as PaymentGateway)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a payment gateway" />
+                    <SelectValue placeholder={t('payment.selectGatewayPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="stripe">Stripe</SelectItem>
@@ -106,9 +108,9 @@ const PaymentIntegration = () => {
               </div>
               
               <Alert>
-                <AlertTitle>PCI-DSS 4.0 Compliant</AlertTitle>
+                <AlertTitle>{t('payment.complianceTitle')}</AlertTitle>
                 <AlertDescription>
-                  All payments are processed securely using PCI-DSS 4.0 compliant infrastructure.
+                  {t('payment.complianceDescription')}
                 </AlertDescription>
               </Alert>
               
@@ -117,7 +119,7 @@ const PaymentIntegration = () => {
                 disabled={processing} 
                 className="w-full"
               >
-                {processing ? 'Processing...' : 'Process Payment'}
+                {processing ? t('payment.processing') : t('payment.processPayment')}
               </Button>
             </div>
           </TabsContent>
@@ -125,10 +127,10 @@ const PaymentIntegration = () => {
           <TabsContent value="banks">
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Select Bank</label>
+                <label className="block text-sm font-medium mb-1">{t('payment.selectBank')}</label>
                 <Select value={selectedBank} onValueChange={setSelectedBank}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a bank" />
+                    <SelectValue placeholder={t('payment.selectBankPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {banks.map(bank => (
@@ -141,9 +143,9 @@ const PaymentIntegration = () => {
               </div>
               
               <Alert>
-                <AlertTitle>Bank Integration Standards</AlertTitle>
+                <AlertTitle>{t('payment.bankStandardsTitle')}</AlertTitle>
                 <AlertDescription>
-                  All bank integrations comply with HSM, PCI-DSS 4.0, SWIFT CSP, and ISO 27001 standards.
+                  {t('payment.bankStandardsDescription')}
                 </AlertDescription>
               </Alert>
               
@@ -152,7 +154,7 @@ const PaymentIntegration = () => {
                 disabled={processing || !selectedBank} 
                 className="w-full"
               >
-                {processing ? 'Processing...' : 'Process Bank Payment'}
+                {processing ? t('payment.processing') : t('payment.processBankPayment')}
               </Button>
             </div>
           </TabsContent>
@@ -160,10 +162,10 @@ const PaymentIntegration = () => {
           <TabsContent value="global">
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Select Global Payment Rail</label>
+                <label className="block text-sm font-medium mb-1">{t('payment.selectRail')}</label>
                 <Select value={selectedRail} onValueChange={setSelectedRail}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a payment rail" />
+                    <SelectValue placeholder={t('payment.selectRailPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {globalPaymentRails.map(rail => (
@@ -176,9 +178,9 @@ const PaymentIntegration = () => {
               </div>
               
               <Alert>
-                <AlertTitle>Global Payment Support</AlertTitle>
+                <AlertTitle>{t('payment.globalSupportTitle')}</AlertTitle>
                 <AlertDescription>
-                  We support UPI/IMPS (India), WeChat/Alipay (China), Pix/SPEI (Latin America), SEPA (EU), and ACH (US).
+                  {t('payment.globalSupportDescription')}
                 </AlertDescription>
               </Alert>
               
@@ -187,7 +189,7 @@ const PaymentIntegration = () => {
                 disabled={processing || !selectedRail} 
                 className="w-full"
               >
-                {processing ? 'Processing...' : 'Process Global Payment'}
+                {processing ? t('payment.processing') : t('payment.processGlobalPayment')}
               </Button>
             </div>
           </TabsContent>
